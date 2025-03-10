@@ -5,7 +5,7 @@ dotenv.config();
 class Direct7SMS {
 
     constructor() {
-        this.domain = process.env.DOMAIN
+        this.domain = process.env.DOMAIN || 'https://api.d7networks.com'
     }
 
     async init(client_id, client_secret) {
@@ -115,5 +115,4 @@ class Direct7SMS {
     }
 }
 
-new Direct7SMS()
 export default Direct7SMS;
