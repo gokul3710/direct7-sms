@@ -1,11 +1,9 @@
 import axios from 'axios';
-import * as dotenv from 'dotenv';
-dotenv.config();
 
 class Direct7SMS {
 
     constructor() {
-        this.domain = process.env.DOMAIN || 'https://api.d7networks.com'
+        this.domain = 'https://api.d7networks.com'
     }
 
     async init(client_id, client_secret) {
