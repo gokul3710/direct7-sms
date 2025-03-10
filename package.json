@@ -1,0 +1,21 @@
+{
+  "name": "gokul-direct7-sms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.8.2",
+    "dotenv": "^16.4.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gokul3710/gokul-direct7-sms.git"
+  },
+  "homepage": "https://github.com/gokul3710/gokul-direct7-sms.git"
+}
