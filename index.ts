@@ -2,11 +2,14 @@ import axios from 'axios';
 
 class Direct7SMS {
 
+    private domain: string | null = null
+    private token: string | null = null
+
     constructor() {
         this.domain = 'https://api.d7networks.com'
     }
 
-    async init(client_id, client_secret) {
+    async init(client_id: string, client_secret: string) {
         try {
 
             if(!client_id || !client_secret){
@@ -37,11 +40,16 @@ class Direct7SMS {
         }
     }
 
-    async sendSms(data) {
+    async sendSms(data: {
+        recipients: string[]
+        content: string
+        msg_type: string
+        report_url: string
+    }) {
 
         try {
 
-            if(!data.recipients || !data.content || !data.msg_type || !data.report_url) {
+            if(!Array.isArray(data.recipients) || !data.recipients.length  || !data.content || !data.msg_type || !data.report_url) {
                 throw new Error('Invalid data')
             }
 
@@ -76,7 +84,7 @@ class Direct7SMS {
         }
     }
 
-    async getMessageStatus(request_id) {
+    async getMessageStatus(request_id: string) {
 
         try {
 
@@ -94,7 +102,7 @@ class Direct7SMS {
         }
     }
 
-    async countryMessagePricing(country_iso) {
+    async countryMessagePricing(country_iso: string) {
         try {
             let response = await axios(`${this.domain}/messages/v1/sms/pricing`, {
                 method: 'GET',
