@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class Direct7SMS {
+export class Direct7SMS {
 
     private domain: string | null = null
     private token: string | null = null
@@ -120,5 +120,3 @@ class Direct7SMS {
         }
     }
 }
-
-export default Direct7SMS;
